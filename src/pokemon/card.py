@@ -5,6 +5,8 @@ from src.pokemon.rarity import Rarity, parse_rarity
 
 @dataclass
 class Card:
+    """Store info about an indiviual card."""
+
     name: str
     set_code: str
     card_set_number: int
