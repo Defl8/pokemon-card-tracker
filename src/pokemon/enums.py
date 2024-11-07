@@ -24,7 +24,7 @@ class Type(Enum):
     DRAGON = 7
 
 
-def parse_rarity(rarity_string: str) -> Rarity:
+def string_to_enum_member(rarity_string: str, enumeration: Enum) -> Enum:
     """Takes input rarity string and converts to Rarity type from enum.
 
     Args:
@@ -33,8 +33,9 @@ def parse_rarity(rarity_string: str) -> Rarity:
     Returns:
     Rarity enum object. If input rarity is not valid then return NA member of Rarity.
     """
-    cleaned_rarity_string: str = rarity_string.strip().replace(" ", "_").upper()
-    rarity_names: list[str] = Rarity._member_names_
-    if cleaned_rarity_string in rarity_names:
-        return Rarity[cleaned_rarity_string]
-    return Rarity.NA
+    cleaned_string: str = rarity_string.strip().replace(" ", "_").upper()
+    enum_member_names: list[str] = enumeration._member_names_
+    if cleaned_string in enum_member_names:
+        return enumeration[cleaned_string]
+    else:
+        raise NotImplementedError
