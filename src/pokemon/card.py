@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from src.pokemon.rarity import Rarity, parse_rarity
+from src.pokemon.enums import Rarity, parse_rarity
 
 
 @dataclass
