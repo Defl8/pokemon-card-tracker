@@ -13,6 +13,17 @@ class Rarity(Enum):
     SECRET_RARE = 7
 
 
+class Type(Enum):
+    GRASS = 0
+    RED = 1
+    WATER = 2
+    FIGHTING = 3
+    LIGHTNING = 4
+    PSYCHIC = 5
+    DARK = 6
+    DRAGON = 7
+
+
 def parse_rarity(rarity_string: str) -> Rarity:
     """Takes input rarity string and converts to Rarity type from enum.
 
