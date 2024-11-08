@@ -25,7 +25,7 @@ class Type(Enum):
 
 
 def string_to_enum_member(
-    rarity_string: str, enumeration: Rarity | Type
+    string_member: str, enumeration: Rarity | Type
 ) -> Rarity | Type:
     """Takes input rarity string and converts to Rarity type from enum.
 
@@ -36,7 +36,7 @@ def string_to_enum_member(
     Rarity enum object. If input rarity is not valid then return NA member of Rarity.
     """
     try:
-        enum_member: Rarity | Type = getattr(enumeration, rarity_string)
+        enum_member: Rarity | Type = getattr(enumeration, string_member)
     except AttributeError as err:
         raise NotImplementedError
     return enum_member
