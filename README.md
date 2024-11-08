@@ -12,5 +12,5 @@ A project to track pokemon card collection.
 
 # Progress
 ## 2024-11-06
-Move enums to one file.
+Moved enums to one file.
 Need to figure out how to type hint to allow any enum into a function.
