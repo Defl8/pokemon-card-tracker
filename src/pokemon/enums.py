@@ -24,7 +24,9 @@ class Type(Enum):
     DRAGON = 7
 
 
-def string_to_enum_member(rarity_string: str, enumeration: Enum) -> Enum:
+def string_to_enum_member(
+    rarity_string: str, enumeration: Rarity | Type
+) -> Rarity | Type:
     """Takes input rarity string and converts to Rarity type from enum.
 
     Args:
