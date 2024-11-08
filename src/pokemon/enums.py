@@ -35,9 +35,8 @@ def string_to_enum_member(
     Returns:
     Rarity enum object. If input rarity is not valid then return NA member of Rarity.
     """
-    cleaned_string: str = rarity_string.strip().replace(" ", "_").upper()
-    enum_member_names: list[str] = enumeration._member_names_
-    if cleaned_string in enum_member_names:
-        return enumeration[cleaned_string]
-    else:
+    try:
+        enum_member: Rarity | Type = getattr(enumeration, rarity_string)
+    except AttributeError as err:
         raise NotImplementedError
+    return enum_member
