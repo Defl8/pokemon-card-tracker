@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import TypeVar
 
 from src.error.exceptions import InvalidCardType, InvalidCardRarity
 
@@ -26,9 +27,10 @@ class Type(Enum):
     DRAGON = 7
 
 
-def string_to_enum_member(
-    string_member: str, enumeration: Rarity | Type
-) -> Rarity | Type:
+Variant = TypeVar("Variant", Rarity, Type)
+
+
+def string_to_enum_member(string_member: str, enumeration: type[Variant]) -> Variant:
     """Takes input string and checks if it is an acceptable enum member.
 
     Args:
@@ -38,7 +40,7 @@ def string_to_enum_member(
     Enum member is if string is valid. Throws InvalidCardRarity or InvalidCardType if invalid.
     """
     try:
-        enum_member: Rarity | Type = getattr(enumeration, string_member)
+        enum_member: Variant = getattr(enumeration, string_member)
     except AttributeError as err:
         if isinstance(enumeration, Rarity):
             raise InvalidCardRarity(
