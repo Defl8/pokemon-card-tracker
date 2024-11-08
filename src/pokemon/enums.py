@@ -29,13 +29,13 @@ class Type(Enum):
 def string_to_enum_member(
     string_member: str, enumeration: Rarity | Type
 ) -> Rarity | Type:
-    """Takes input rarity string and converts to Rarity type from enum.
+    """Takes input string and checks if it is an acceptable enum member.
 
     Args:
-    rarity_string(str): a string representing the rarity
+    string_member(str): a string representing the member of an enum.
 
     Returns:
-    Rarity enum object. If input rarity is not valid then return NA member of Rarity.
+    Enum member is if string is valid. Throws InvalidCardRarity or InvalidCardType if invalid.
     """
     try:
         enum_member: Rarity | Type = getattr(enumeration, string_member)
