@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from src.pokemon.enums import Rarity, parse_rarity
+from src.pokemon.enums import Rarity, string_to_enum_member
 
 
 @dataclass
@@ -18,4 +18,4 @@ class Card:
         self.name = name
         self.set_code = set_code
         self.card_set_number = card_set_number
-        self.rarity = parse_rarity(rarity)
+        self.rarity = string_to_enum_member(rarity, Rarity)
