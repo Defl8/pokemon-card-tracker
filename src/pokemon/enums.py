@@ -1,5 +1,7 @@
 from enum import Enum
 
+from src.error.exceptions import InvalidCardType, InvalidCardRarity
+
 
 class Rarity(Enum):
     NA = -1
@@ -38,5 +40,10 @@ def string_to_enum_member(
     try:
         enum_member: Rarity | Type = getattr(enumeration, string_member)
     except AttributeError as err:
-        raise NotImplementedError  # TODO: add custom exception here
+        if isinstance(enumeration, Rarity):
+            raise InvalidCardRarity(
+                f"{string_member} is not apart of acceptable rarities."
+            )
+        else:
+            raise InvalidCardType(f"{string_member} is not apart of acceptable types.")
     return enum_member
