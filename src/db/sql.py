@@ -35,3 +35,17 @@ def make_sql_table(table_statement: str, db_name: str) -> bool:
     except sqlite3.OperationalError as err:
         print(f"Operational error when trying to make table. ERROR: {err}")
         return False
+
+
+def insert_into_table(
+    insert_statement: str, db_name: str, values: tuple[str | int, ...]
+) -> bool:
+    try:
+        with sqlite3.connect(db_name) as conn:
+            cursor: sqlite3.Cursor = conn.cursor()
+            _ = cursor.execute(insert_statement, values)
+            conn.commit()
+            return True
+    except sqlite3.OperationalError as err:
+        print(f"Operational error when trying to make insert values. ERROR: {err}")
+        return False
