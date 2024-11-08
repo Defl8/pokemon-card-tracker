@@ -38,5 +38,5 @@ def string_to_enum_member(
     try:
         enum_member: Rarity | Type = getattr(enumeration, string_member)
     except AttributeError as err:
-        raise NotImplementedError
+        raise NotImplementedError  # TODO: add custom exception here
     return enum_member
