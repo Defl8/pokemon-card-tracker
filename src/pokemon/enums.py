@@ -49,3 +49,15 @@ def string_to_enum_member(string_member: str, enumeration: type[Variant]) -> Var
         else:
             raise InvalidCardType(f"{string_member} is not apart of acceptable types.")
     return enum_member
+
+
+def variant_to_int(var: Variant) -> int:
+    """Function to get the value of the enum of type Variant.
+
+    Args:
+    var(Variant): Object with enum value.
+
+    Returns:
+    int represented by the enum member.
+    """
+    return var.value
