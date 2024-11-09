@@ -47,4 +47,5 @@ class Card:
             )
             for attr in card_tuple:
                 if isinstance(attr, Rarity | Type):
+                    attr_val = variant_to_int(attr)
             _ = cursor.execute(insert_statement, dataclasses.astuple(self))
