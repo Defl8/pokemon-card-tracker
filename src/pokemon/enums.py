@@ -51,7 +51,7 @@ def string_to_enum_member(string_member: str, enumeration: type[Variant]) -> Var
     return enum_member
 
 
-def variant_to_int(var: Variant) -> int:
+def variant_to_int(var: Rarity | Type) -> int:
     """Function to get the value of the enum of type Variant.
 
     Args:
