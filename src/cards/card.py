@@ -1,12 +1,12 @@
 class Card:
-    _type: str = ""
-    _set: str = ""
     _allowed_card_types: tuple[str, ...] = ("pokemon", "trainer", "energy")
     _max_set_len: int = 3
 
     def __init__(self, card_type: str, name: str, set: str) -> None:
+        self._type: str = ""
         self.type = card_type
         self.name: str = name
+        self._set: str = ""
         self.set = set
 
     @property
