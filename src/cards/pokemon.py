@@ -13,6 +13,7 @@ class Pokemon(Card):
         hit_points: int,
         retreat_cost: str,  # TODO: make cost object
         weakness: str,  # TODO: make energy object
+        resistance: str | None,  # TODO: make energy object
         *moves: Attack | Ability,
     ) -> None:
         super().__init__(card_type, name, set)
