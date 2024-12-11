@@ -1,4 +1,5 @@
 from src.cards.card import Card
+from src.cards.move import Ability, Attack
 
 
 class Pokemon(Card):
@@ -9,8 +10,12 @@ class Pokemon(Card):
         pkmn_type: str,
         stage: str,
         hit_points: int,
+        retreat_cost: str,  # TODO: make cost object
+        weakness: str,  # TODO: make energy object
+        *moves: Attack | Ability,
     ) -> None:
         super().__init__(card_type, name)
         self.pkmn_type: str = pkmn_type
         self.stage: str = stage
         self.hit_points: int = hit_points
+        self.moves: tuple[Attack | Ability, ...] = moves
