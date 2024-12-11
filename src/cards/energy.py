@@ -35,5 +35,4 @@ class Energy(Card):
     def eng_type(self, eng_type: str) -> None:
         if eng_type not in Energy._energy_types:
             raise ValueError(f"Energy type {eng_type} is not valid.")
-        if self.is_acespec:
-            self._eng_type = eng_type
+        self._eng_type = "Special" if self.is_acespec else eng_type
