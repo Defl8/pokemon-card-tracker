@@ -31,4 +31,4 @@ class Ability(Move):
 
     def __init__(self, name: str, effect: str) -> None:
         super().__init__(name)
-        self._effect = effect
+        self._effect = effect  # all abilities have effects
