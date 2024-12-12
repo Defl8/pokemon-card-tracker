@@ -1,8 +1,9 @@
-from tcgdexsdk import TCGdex
+from pprint import pprint
+from src.api.request import make_get_request
 
 
 def main():
-    pass
+    pprint(make_get_request("https://api.tcgdex.net/v2/en/cards/swsh3-136"))
 
 
 if __name__ == "__main__":
