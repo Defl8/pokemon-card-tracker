@@ -12,7 +12,7 @@ class Pokemon(Card):
         stage: str,
         hit_points: int,
         retreat_cost: str,  # TODO: make cost object
-        weakness: str,  # TODO: make energy object
+        weakness: str | None,  # TODO: make energy object,
         resistance: str | None,  # TODO: make energy object
         *moves: Attack | Ability,
     ) -> None:
@@ -21,3 +21,6 @@ class Pokemon(Card):
         self.stage: str = stage
         self.hit_points: int = hit_points
         self.moves: tuple[Attack | Ability, ...] = moves
+        self.retreat_cost: str = retreat_cost
+        self.weakness: str | None = weakness  # TODO: make energy object,
+        self.resistance: str | None = resistance  # TODO: make energy object
