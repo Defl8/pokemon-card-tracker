@@ -25,6 +25,7 @@ class Energy(Card):
     ) -> None:
         super().__init__(card_type, name, set)
         self._eng_type: str = ""
+        self.eng_type = eng_type
         self.is_acespec: bool = is_acespec
 
     @property
