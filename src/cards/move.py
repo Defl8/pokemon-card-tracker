@@ -24,6 +24,22 @@ class Attack(Move):
         self._effect = effect  # Not all moves have an effect
         self._damage = damage  # Not all moves do damage
 
+    @property
+    def cost(self):
+        return self._cost
+
+    @property
+    def effect(self):
+        return self._effect
+
+    @property
+    def damage(self):
+        return self._damage
+
+    @damage.setter
+    def damage(self, value):
+        self._damage = value
+
 
 class Ability(Move):
     def __init__(self, name: str, effect: str) -> None:
