@@ -20,10 +20,12 @@ class Energy(Card):
         card_type: str,
         name: str,
         set: str,
+        reg_mark: str,
+        rarity: str,
         eng_type: str,
         is_acespec: bool = False,
     ) -> None:
-        super().__init__(card_type, name, set)
+        super().__init__(card_type, name, set, reg_mark, rarity)
         self._eng_type: str = ""
         self.eng_type = eng_type
         self.is_acespec: bool = is_acespec

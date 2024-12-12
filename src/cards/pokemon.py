@@ -8,6 +8,7 @@ class Pokemon(Card):
         card_type: str,  # inherited
         name: str,  # inherited
         set: str,  # inherited
+        rarity: str,
         pkmn_type: str,
         stage: str,
         hit_points: int,
@@ -17,7 +18,7 @@ class Pokemon(Card):
         reg_mark: str,
         *moves: Attack | Ability,
     ) -> None:
-        super().__init__(card_type, name, set, reg_mark)
+        super().__init__(card_type, name, set, reg_mark, rarity)
         self.pkmn_type: str = pkmn_type
         self.stage: str = stage
         self.hit_points: int = hit_points

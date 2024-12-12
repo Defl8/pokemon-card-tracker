@@ -7,3 +7,4 @@ class Card:
     type: str
     set: str
     reg_mark: str
+    rarity: str
