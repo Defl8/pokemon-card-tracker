@@ -14,9 +14,10 @@ class Pokemon(Card):
         retreat_cost: str,  # TODO: make cost object
         weakness: str | None,  # TODO: make energy object,
         resistance: str | None,  # TODO: make energy object
+        reg_mark: str,
         *moves: Attack | Ability,
     ) -> None:
-        super().__init__(card_type, name, set)
+        super().__init__(card_type, name, set, reg_mark)
         self.pkmn_type: str = pkmn_type
         self.stage: str = stage
         self.hit_points: int = hit_points

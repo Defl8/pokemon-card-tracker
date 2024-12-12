@@ -5,9 +5,6 @@ from dataclasses import dataclass
 class Move:
     _name: str
 
-    def __init__(self, name: str) -> None:
-        self._name = name
-
 
 # TODO: make cost object
 @dataclass
@@ -35,10 +32,6 @@ class Attack(Move):
     @property
     def damage(self):
         return self._damage
-
-    @damage.setter
-    def damage(self, value):
-        self._damage = value
 
 
 class Ability(Move):
