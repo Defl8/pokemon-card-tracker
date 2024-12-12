@@ -25,10 +25,11 @@ class Attack(Move):
         self._damage = damage  # Not all moves do damage
 
 
-@dataclass
 class Ability(Move):
-    _effect: str | None
-
     def __init__(self, name: str, effect: str) -> None:
         super().__init__(name)
-        self._effect = effect  # all abilities have effects
+        self._effect: str = effect
+
+    @property
+    def effect(self) -> str:
+        return self._effect
