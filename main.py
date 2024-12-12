@@ -1,5 +1,8 @@
+from tcgdexsdk import TCGdex
+
+
 def main():
-    raise NotImplementedError
+    pass
 
 
 if __name__ == "__main__":
